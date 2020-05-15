@@ -3,12 +3,14 @@
     {
 	   public function __construct()
        {
+			$servidor="localhost";
+			$basadatos="ventas";
+			$usuario="root";
+			$password="";
 
-	        parent::__construct('localhost','root','','Usuarios');
-            $this->query("SET NAMES 'utf8';");
-            $this->connect_errno ? die('Error en la conexion de la base de datos.') : $error="<br><br> Conectado con la base de datos: ";
-            //echo $error;
-            unset($error);
+			parent: :__construct($servidor,$usuario,$password,$basadatos);
+			$this->query("SET NAMES 'utf8';");
+			$this->connect_errno ? die('Error en la conexión') : $error="Conectado a ".$basadatos;
        }
     }
 ?>
