@@ -1,22 +1,21 @@
 <?php
-	include ('Conexion.php');
+	include('Validarusuario.php');
 
-	$con=new Conexion();
+	$validar = new Validarusuario;
 
-	$user=$_POST['nombre'];
-	$password=$_POST['password'];
+	$nombre=$_POST['nombre'];
+	$password=$_POST['pass'];
 
-	$query="SELECT * FROM `user` WHERE user='$user' AND password='$password'";
-	$usuario=$con->query($query);
-	$con->close();
-	
+	$resultado=$validar->Validarusuario($nombre, $password);
 
-	if($usuario->num_rows==1)
+	var_dump($resultado);
+
+	if($resultado->num_rows == 1)
 	{
 		header("location:ventas.php");
 	}
-	else 
+	else
 	{
 		header("location:index.html");
-    }
+	}
 ?>
