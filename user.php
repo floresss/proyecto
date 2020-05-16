@@ -1,12 +1,12 @@
 <?php
 	include('Validarusuario.php');
 
-	$validar = new Validarusuario;
+	$validar = new ValidarUsuario;
 
 	$nombre=$_POST['nombre'];
 	$password=$_POST['pass'];
 
-	$resultado=$validar->Validarusuario($nombre, $password);
+	$resultado=$validar->ValidarUser($nombre, $password);
 
 	var_dump($resultado);
 
