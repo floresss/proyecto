@@ -3,7 +3,7 @@
 
 	class ValidarUsuario
 	{
-		public function ValidarUsuario($user, $pass)
+		public function Validarusuario($user, $pass)
 		{
 			$us= new Conexion();
 			$q="SELECT * FROM `usuarios` WHERE `user`='$user' AND `password`='$pass';";
